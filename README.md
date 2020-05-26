@@ -13,6 +13,7 @@ The utility:
 # Installation
 
 `$ npm install moog-bulkconfig`
+
 `$ npm link moog-bulkconfig`
 
 ## Usage
@@ -20,8 +21,8 @@ The utility:
 ```
 express-bulkconfig [-d] [-y] [-j] [-l debug] [-c config_file] [-h]
     --dryrun:            Show what changes would be made, but don't do it.
-    --yaml:              Dump the entire seach results as a YAML file.
-    --json:              Dump the entire seach results as a YAML file.
+    --yaml:              Dump the entire seach results as a YAML file. (saved.yaml)
+    --json:              Dump the entire seach results as a JSON file. (saved.json)
     --loglevel debug:    Be more verbose
     --conf config_file:  Specifiy a config file (default is ./mbc-config.yaml)
     --help:              The usage message
