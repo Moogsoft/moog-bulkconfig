@@ -1,6 +1,6 @@
 {
   "name": "moog-bulkconfig",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Moogsoft bulk config utility",
   "scripts": {
     "test": "node index.js --help"
