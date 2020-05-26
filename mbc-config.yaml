@@ -1,0 +1,11 @@
+---
+apikey: ''
+
+owner: ''
+
+patchquery:
+  when:
+    sigma: 4
+    holdfor: 1
+  then:
+    sigma: 8

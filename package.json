@@ -1,0 +1,25 @@
+{
+  "name": "moog-bulkconfig",
+  "version": "0.9.2",
+  "description": "Moogsoft bulk config utility",
+  "scripts": {
+    "test": "node index.js --help"
+  },
+  "author": "Richard Whitehead <reverend@moogsoft.com>",
+  "license": "Apache-2.0",
+  "dependancies": {
+    "js-yaml": "^3.13.1",
+    "getopts": "^2.2.5"
+  },
+  "bin": {
+    "moog-bulkconfig": "./index.js"
+  },
+  "keywords": [
+    "moog",
+    "Express",
+    "AIOps",
+    "Moogsoft",
+    "REST",
+    "API"
+  ]
+}
