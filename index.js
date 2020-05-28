@@ -15,7 +15,6 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const getopts = require('getopts');
 
-const hostname = 'api.moogsoft.ai';
 const protocol = 'https';
 
 const cliopts = getopts(process.argv.slice(2), {
@@ -52,6 +51,7 @@ const configfile = yaml.safeLoad(fs.readFileSync(cliopts.conf, 'utf8'));
 const apikey = configfile.apikey ? configfile.apikey : null;
 const owner = configfile.owner ? configfile.owner : 'NULLSEARCH';
 const patchquery = configfile.patchquery ? configfile.patchquery : {};
+const hostname = configfile.hostname ? configfile.hostname : 'api.moogsoft.ai';
 
 const options = {
     headers: {
@@ -144,7 +144,6 @@ function changeConfig(d, q) {
 //
 function processBody(body) {
     const resbody = JSON.parse(body);
-
     resbody.data.forEach((m) => {
         //
         // This is a good place to filter metrics
@@ -189,7 +188,16 @@ function searchConfig(sUrl, sOpts) {
         });
         res.on('end', () => {
             const fullbody = Buffer.concat(accumulator);
-            processBody(fullbody);
+            const fbody = JSON.parse(JSON.stringify(fullbody));
+
+            // Make sure there's data
+            if (fbody.data.length > 0) {
+                processBody(fullbody);
+            } else {
+                console.error('ERROR: no data returned');
+                console.log('statusCode:', res.statusCode);
+                console.log('headers:', res.headers);
+            }
         });
     }).on('error', (e) => {
         console.error(e);

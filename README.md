@@ -34,6 +34,7 @@ moog-bulkconfig [-d] [-y] [-j] [-l debug] [-c config_file] [-h]
 
 ---
 apikey: 'foo_12345667890ljyg76dcOGYSJYGY7bhd7VB7vbfGHjyggy' 
+hostname: 'api.moogsoft.ai'
 
 owner: 'acme.*EC2:'
 
