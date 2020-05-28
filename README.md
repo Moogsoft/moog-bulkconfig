@@ -19,7 +19,7 @@ The utility:
 ## Usage
 
 ```
-express-bulkconfig [-d] [-y] [-j] [-l debug] [-c config_file] [-h]
+moog-bulkconfig [-d] [-y] [-j] [-l debug] [-c config_file] [-h]
     --dryrun:            Show what changes would be made, but don't do it.
     --yaml:              Dump the entire seach results as a YAML file. (saved.yaml)
     --json:              Dump the entire seach results as a JSON file. (saved.json)
